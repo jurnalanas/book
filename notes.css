@@ -1,0 +1,18 @@
+.content {
+	padding-right: 0em;
+}
+
+
+
+.content > p {
+	text-align: justify;
+}
+
+p.tanggal {
+	text-align: right;
+
+}
+
+.content > li {
+line-height: 40px;
+}
