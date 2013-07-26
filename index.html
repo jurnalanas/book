@@ -18,12 +18,15 @@
 		<script src='lib/respond.min.js'></script>
 	<![endif]-->
 
-<script src="//squaresend.com/squaresend.js"></script>
+
 <link rel="shortcut icon" type="images/x-icon" href="assets/favicon.ico" />
 </head>
 
 
 <body>
+	<div id="feedback">
+  <a href="/feedback_url/">feedback</a>
+</div>
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -85,6 +88,23 @@
 
 
 	</div>
-	
+	<script type="text/javascript">
+	// Get the wrapper div, and the contained <a> element
+var feedback_btn = document.getElementById("feedback");
+var feedback_link = feedback_btn.getElementsByTagName("a")[0];
+
+// Check for browsers that don't support CSS3 transforms or IE's filters
+if(feedback_btn.style.Transform == undefined && feedback_btn.style.WebkitTransform == undefined && feedback_btn.style.MozTransform == undefined && feedback_btn.style.OTransform == undefined && feedback_btn.filters == undefined) {
+
+  // Swap width with height, change padding
+  feedback_link.style.width="15px";
+  feedback_link.style.height="70px";
+  feedback_link.style.padding="16px 8px";
+
+  // Insert vertical SVG text
+  feedback_link.innerHTML = "<object type='image/svg+xml' data='feedback_vertical.svg'></object>";
+}
+</script>
+<script src="//squaresend.com/squaresend.js"></script>
 </body>
 </html>
